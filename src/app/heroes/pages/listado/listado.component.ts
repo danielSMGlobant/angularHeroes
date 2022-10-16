@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Heroe } from '../../interfaces/heroe.interface';
-import { HeroesService } from '../../services/heroes.service';
+import { Component, OnInit } from "@angular/core";
+import { Heroe } from "../../interfaces/heroe.interface";
+import { HeroesService } from "../../services/heroes.service";
 
 @Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html',
-  styles: [],
+  selector: "app-listado",
+  templateUrl: "./listado.component.html",
 })
 export class ListadoComponent implements OnInit {
   heroes: Heroe[] = [];
