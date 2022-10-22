@@ -18,9 +18,12 @@ export class BuscarComponent implements OnInit {
   ngOnInit(): void {}
 
   searching() {
+    this.heroeSelected = undefined;
     this.heroesServices
       .searchHeroes(this.termino.trim())
-      .subscribe((res) => (this.heroes = res));
+      .subscribe((res) => {
+        this.heroes = res
+      });
   }
 
   optionSelected(event: MatAutocompleteSelectedEvent) {

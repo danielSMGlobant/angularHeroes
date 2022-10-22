@@ -30,10 +30,16 @@
 
     </mat-form-field>
   </div>
-  <div>
-      {{heroeSelected | json}}
+
+  <div *ngIf="!heroeSelected" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
+    <div fxFlex="20" fxFlex.sm="30" fxFlex.lg="15" *ngFor="let heroe of heroes">
+      <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
+    </div>
   </div>
-  <div *ngIf="heroeSelected">
-    <app-heroe-tarjeta [heroe]="heroeSelected"></app-heroe-tarjeta>
+
+  <div *ngIf="heroeSelected && termino">
+    <div fxLayout="row">
+      <app-heroe-tarjeta [heroe]="heroeSelected" fxFlex="20" fxFlex.sm="30" fxFlex.lg="15" ></app-heroe-tarjeta>
+    </div>
   </div>
 </div>

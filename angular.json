@@ -106,6 +106,9 @@
   },
   "defaultProject": "heroesApp",
   "cli": {
-    "analytics": "870c1141-b15f-4972-a7f2-858912e4a40c"
+    "analytics": "870c1141-b15f-4972-a7f2-858912e4a40c",
+    "cache": {
+      "enabled": false
+    }
   }
 }
