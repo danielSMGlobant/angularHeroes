@@ -1,13 +1,18 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { Heroe } from '../interfaces/heroe.interface';
+import { Pipe, PipeTransform } from "@angular/core";
+import { Heroe } from "../interfaces/heroe.interface";
 
 @Pipe({
-  name: 'imagen'
+  name: "imagen",
+  //pure: false, //para que dispare cada vez que angular detecte-change SOLO CUANDO SEA NECESARIO
 })
 export class ImagenPipe implements PipeTransform {
-
   transform(heroe: Heroe): string {
-    return `assets/heroes/${heroe.id}.jpg`;
+    if (!heroe.id && !heroe.alt_image) {
+      return `assets/no-image.png`;
+    } else if (heroe.alt_image) {
+      return heroe.alt_image;
+    } else {
+      return `assets/heroes/${heroe.id}.jpg`;
+    }
   }
-
 }
